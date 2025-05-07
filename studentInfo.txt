@@ -1,0 +1,8 @@
+Student name: Iryna Nazar
+Student ID: 24048851
+Enrolled Courses:
+- Programming Concepts I
+- Databases I
+- Intro to Web Development
+- System Analysis and Design
+- Business Application
