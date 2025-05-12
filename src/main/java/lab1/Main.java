@@ -19,6 +19,7 @@ public class Main {
     public static  void  saveStudentInfoToFile(String studentName, int studentId, List<String> courses){
         File file = new File("studentInfo.txt");
 
+        // writing student info to the file ( Student name, ID and enrolled courses )
         try (FileWriter fw = new FileWriter(file,false)) {
             fw.write("Student name: " + studentName + "\n");
             fw.write("Student ID: " + studentId + "\n");
@@ -38,7 +39,7 @@ public class Main {
 
 
         while (exit != 0) {
-            List<String> courses = new ArrayList<>();
+            List<String> courses = new ArrayList<>(); // filled array with the courses
             courses.add("Programming Concepts I");
             courses.add("Databases I");
             courses.add("Intro to Web Development");
@@ -53,6 +54,7 @@ public class Main {
                 Scanner scanner = new Scanner(System.in);
                 int student_number = scanner.nextInt();
 
+                // checks if student's id is valid
                 if (student_number == student_id) {
                     System.out.println("Welcome, " + student_name);
                     System.out.println("Your have "+ courses.size()+" courses");
@@ -66,6 +68,7 @@ public class Main {
                 } else {
                     System.out.println("Not a valid student number");
                 }
+                // an option to end the program
                 System.out.println("Do you want to exit the program? (0 to exit, 1 to continue): ");
                 exit = scanner.nextInt();
 
