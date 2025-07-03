@@ -2,7 +2,11 @@ package lab4.game;
 
 import static lab4.game.Board.PlayerToken.O;
 import static lab4.game.Board.PlayerToken.X;
-
+/**
+ * Import JColor to complete task 3 in lab4
+ */
+import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.*;
 /**
  * Represents a TicTacToe game board
  */
@@ -92,7 +96,8 @@ public class Board {
         }
         // Check the diagonals
         if (board[0][0] != null && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-            return board[0][2];
+//            return board[0][2];
+            return board[0][0];
         }
         if (board[0][2] != null && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
             return board[0][2];
@@ -150,7 +155,13 @@ public class Board {
         var boardString = new StringBuilder();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                boardString.append(board[i][j] == null ? '.' : board[i][j]);
+                if (board[i][j] == null) {
+                    boardString.append('.');
+                } else if (board[i][j] == PlayerToken.X) {
+                    boardString.append(colorize("X", BLUE_TEXT()));
+                } else if (board[i][j] == PlayerToken.O) {
+                    boardString.append(colorize("O", BRIGHT_MAGENTA_TEXT()));
+                }
             }
             boardString.append("\n");
         }
