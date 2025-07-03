@@ -5,12 +5,18 @@ import lab4.game.*;
 import java.util.Scanner;
 
 /**
+ * Import JColor to complete task 3 in lab4
+ */
+import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.*;
+
+/**
  * Helper methods for doing console-based user interaction
  */
 public class Console {
 
     public static void println(String message) {
-        System.out.println(message);
+        System.out.println(colorize(message, BRIGHT_YELLOW_TEXT()));
     }
 
     /**
@@ -19,7 +25,7 @@ public class Console {
      * @return The user's response
      */
     public static String prompt(String promptMessage) {
-        System.out.print(promptMessage);
+        System.out.print(colorize(promptMessage, BRIGHT_YELLOW_TEXT()));
         var scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
@@ -43,10 +49,10 @@ public class Console {
 
 
         var scanner = new Scanner(System.in);
-        final String helpMessage = "Input must be in the format 'row column', e.g., '1 2' or 't m' for the top middle cell.";
+        final String helpMessage = colorize("Input must be in the format 'row column', e.g., '1 2' or 't m' for the top middle cell.", BRIGHT_RED_TEXT());
 
         while ( true ) {
-            System.out.print(prompt);
+            System.out.print(colorize(prompt, BRIGHT_YELLOW_TEXT()));
             var input = scanner.nextLine().trim();
 
             if ( input.length() != 3 ) {
@@ -67,7 +73,7 @@ public class Console {
                 var pos = new Position(Row.from(parts[0]), Col.from(parts[1]));
 
                 if (board.isOccupiedAt(pos)) {
-                    System.out.println("That position is already taken.");
+                    System.out.println(colorize("That position is already taken.", BOLD(), BRIGHT_RED_TEXT(), YELLOW_BACK()));
                     continue;
                 }
 
