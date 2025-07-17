@@ -1,10 +1,10 @@
-package tictactoe.game;
+package lab5.game;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static tictactoe.game.PlayerToken.O;
-import static tictactoe.game.PlayerToken.X;
+import static lab5.game.PlayerToken.O;
+import static lab5.game.PlayerToken.X;
 
 /**
  * Represents a TicTacToe game board
@@ -19,7 +19,7 @@ public class Board {
     /**
      * The current game board state
      */
-    private final PlayerToken[][] board = new PlayerToken[3][3];
+    private final lab5.game.PlayerToken[][] board = new PlayerToken[3][3];
 
     /**
      * Initialize a new, empty tictactoe board
