@@ -55,10 +55,13 @@ public class Console {
                 switch ( input ) {
                     // E.g.
                     // case "randy" -> { return new Randy(); }
+                    case "circe" -> {
+                        return new CircePlayer("Circe");
+                    }
                     default -> printAlert("TODO: Implement computer players");
                 }
             } else {
-                return new Player(input);
+                return new HumanPlayer(input);
             }
         }
     }
