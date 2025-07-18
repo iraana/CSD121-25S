@@ -16,6 +16,8 @@ public class Main {
                 - To play as a human, just enter a name
                 - To have the player played by the computer enter @ followed by one of the following names:
                   - circe : Picks the center cell first, then goes clockwise from the top-middle.
+                  - omola : One move look-ahead player.
+                  ""\");
                 """);
         var player1 = Console.promptForPlayer(X);
         var player2 = Console.promptForPlayer(O);

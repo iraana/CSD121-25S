@@ -58,7 +58,10 @@ public class Console {
                     case "circe" -> {
                         return new CircePlayer("Circe");
                     }
-                    default -> printAlert("TODO: Implement computer players");
+                    case "omola" -> {
+                        return new OmolaPlayer("Omola");
+                    }
+                    default -> printAlert("Unknown computer player.");
                 }
             } else {
                 return new HumanPlayer(input);
