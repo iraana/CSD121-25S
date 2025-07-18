@@ -32,7 +32,7 @@ public class CircePlayer extends Player {
         };
 
         for (Position pos : nextMoveOrder) {
-            if (currentBoard.isEmptyAt(pos)) {
+            if (currentBoard.isEmptyAt(pos)) { // i used isEmptyAt instead of getEmptyCells as in hint, because getEmptyCells would give us a list of all empty positions but isEmptyAt allows us to check each position for empty cell in Circe's order
                 return pos;
             }
         }
