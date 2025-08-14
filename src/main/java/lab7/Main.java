@@ -53,5 +53,10 @@ public class Main {
         var foundRecipes = searchRecipes(searchTerm, dataService);
         System.out.println("\nRecipes containing '" + searchTerm + "':");
         foundRecipes.forEach(System.out::println);
+
+        String searchTerm1 = "BEEF";
+        var foundRecipes1 = searchRecipes(searchTerm1, dataService);
+        System.out.println("\nRecipes containing '" + searchTerm1 + "':");
+        foundRecipes1.forEach(System.out::println);
     }
 }
